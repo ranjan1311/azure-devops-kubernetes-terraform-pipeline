@@ -22,7 +22,7 @@ jobs:
       echo See https://aka.ms/yaml
       eco more information
     displayName: 'Run a multi-line script'
-jobs:
+    
 - job: Job2
   steps:
   - script: echo Job2 ...!
