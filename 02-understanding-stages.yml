@@ -1,36 +1,28 @@
 trigger:
-- master
-
+  - master
 pool:
   vmImage: ubuntu-latest
-
 stages:
-- stage: Build
-  jobs:
-  -job: Build Job
-  steps:
-  -bash: echo Build Job
-- stage: DevDeploy
-  dependsOn: Build
-  jobs:
-  -job: DevDeployJob
-  steps:
-  -bash: echo DevDeploy Job  
-- stage: QADeploy
-  dependsOn: Build
-  jobs:
-  -job: QADeployJob
-  steps:
-  -bash: echo QADeployJob Job  
-- stage: ProdDeploy
-  dependsOn: 
-   - DevDeploy
-   - QADeploy
-  jobs:
-  -job: ProdDeploy Job
-  steps:
-  -bash: echo ProdDeploy Job  
-
+  - stage: Build
+    jobs: null
+    -job: Build Job
+    steps: null
+    -bash: echo Build Job
+  - stage: DevDeploy
+    jobs: null
+    -job: DevDeployJob
+    steps: null
+    -bash: echo DevDeploy Job
+  - stage: QADeploy
+    jobs: null
+    -job: QADeployJob
+    steps: null
+    -bash: echo QADeployJob Job
+  - stage: ProdDeploy
+    jobs: null
+    -job: ProdDeploy Job
+    steps: null
+    -bash: echo ProdDeploy Job
 steps:
-- script: echo Job 1 Step 1!
-  displayName: 'Run a one-line script'
+  - script: echo Job 1 Step 1!
+    displayName: Run a one-line script
